@@ -44,3 +44,23 @@ function closeFullscreen() {
         fullscreenSection.remove();
     }
 }
+
+    // Get the button element
+    var mybutton = document.getElementById("scrollToTopBtn");
+
+    // When the user scrolls down 100px from the top of the document, show the button
+    window.onscroll = function() {
+      if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        mybutton.style.display = "block";
+      } else {
+        mybutton.style.display = "none";
+      }
+    };
+
+
+    function scrollToTop() {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth"  // Smooth scrolling effect
+        });
+      }
