@@ -45,18 +45,29 @@ function closeFullscreen() {
     }
 }
 
-    // Get the button element
-    var mybutton = document.getElementById("scrollToTopBtn");
+ // Wait for the DOM content to be fully loaded
+ document.addEventListener("DOMContentLoaded", function() {
+  var mybutton = document.getElementById("scrollToTopBtn");
 
-    // When the user scrolls down 100px from the top of the document, show the button
-    window.onscroll = function() {
+  // Check if the button exists before proceeding
+  if (!mybutton) {
+      console.error("Button not found");
+      return;
+  }
+
+  // When the user scrolls down 100px from the top of the document, show the button
+  window.onscroll = function() {
+      // Check the scroll position
       if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-        mybutton.style.display = "block";
+          mybutton.style.display = "inline-block"; // Show the button
+          console.log("inside if my button");
+          
+          
       } else {
-        mybutton.style.display = "none";
+          mybutton.style.display = "none"; // Hide the button
       }
-    };
-
+  };
+});
 
     function scrollToTop() {
         window.scrollTo({
@@ -64,3 +75,30 @@ function closeFullscreen() {
           behavior: "smooth"  // Smooth scrolling effect
         });
       }
+
+      
+
+      // Get elements
+const sidebar = document.getElementById('sidebar');
+const openBtn = document.getElementById('open-btn');
+const closeBtn = document.getElementById('close-btn');
+
+// Open the sidebar
+openBtn.addEventListener('click', function() {
+  sidebar.style.left = '0'; // Slide in the sidebar
+  document.body.style.marginLeft = '250px'; // Shift content to the right
+});
+
+// Close the sidebar
+closeBtn.addEventListener('click', function() {
+  sidebar.style.left = '-250px'; // Hide the sidebar
+  document.body.style.marginLeft = '0'; // Reset content position
+});
+
+// Add event listener to dropdowns to toggle submenus
+const dropdowns = document.querySelectorAll('.dropdown');
+dropdowns.forEach(dropdown => {
+  dropdown.addEventListener('click', function() {
+    this.classList.toggle('active');
+  });
+});
