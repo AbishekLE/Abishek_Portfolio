@@ -12,16 +12,18 @@
 </head>
 
 <body>
-
     <div class="container">
+        <button class="open-btn" id="open-btn" >☰ </button>
         <!-- Header -->
         <header>
+
             <div class="banner">
                 <img src="banner.jpg" alt="Banner Image" class="banner-img">
             </div>
             <img src="profile.jpg" alt="Profile Picture" class="profile-img">
             <h1 class="name">Abishek Elumalai</h1>
             <h2 class="title">SOFTWARE ENGINEER</h2>
+           
         </header>
 
         <!-- About Section -->
@@ -214,6 +216,22 @@
             <p>&copy; 2024 Abishek Elumalai. All rights reserved.</p>
         </footer>
     </div>
+
+      <!-- Sidebar -->
+  <div class="sidebar" id="sidebar">
+    <button class="close-btn" id="close-btn">&times;</button>
+    <h2>Menu</h2>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li class="dropdown"><a href="javascript:void(0)" class="dropbtn">Services</a>
+        <ul class="submenu">
+          <li><a href="#web">Coming Soon...</a></li>
+        </ul>
+      </li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
 
     <script src="script.js"></script>
 </body>
