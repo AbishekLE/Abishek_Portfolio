@@ -102,3 +102,4 @@ dropdowns.forEach(dropdown => {
     this.classList.toggle('active');
   });
 });
+
