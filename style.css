@@ -7,11 +7,19 @@
 }
 
 body {
-    background-color: #2f2f2f;
+    background-color:rgb(26, 26, 26);
     color: #ddd;
     line-height: 1.6;
     scroll-behavior: smooth;
     font-size: 16px;
+    background-position: center;
+    background-size: cover;
+
+   
+}
+
+div {
+    position:sticky;
 }
 
 .container {
@@ -42,6 +50,7 @@ body {
 
 /* Header Section */
 header {
+
     position: relative;
     display: flex;
     flex-direction: column;
@@ -161,6 +170,9 @@ section h3 {
    /*  color: black; Change color to cyan */
 }
 
+.block{
+   transition: 0s;
+}
 /* Contact Info Links */
 .contact-info a {
     display: inline-block;
@@ -244,14 +256,17 @@ footer {
 
 
 .scrollToTopBtn {
-    background-color: #555;
     box-align:center;
+    position: relative;
+    background-color: #555;
     color: #fff;
     padding: 8px 15px;
     border-radius: 20px;
     margin: 5px;
     font-size: 14px;
-    box-align:center;
+    position: center;
+    cursor: pointer;
+    z-index: 1000;
     transition: background-color 0.5s ease;
 }
 
@@ -269,6 +284,93 @@ footer {
     border-radius: 20px;
     margin: 5px;
     font-size: 14px;
-    box-align:center;
 }
 
+
+/* Sidebar styles */
+.sidebar {
+    font-family: Verdana;
+    height: 100vh; /* Full height */
+    width: 250px; /* Width of the sidebar */
+    background-color: #3e3e3e; /* Dark background */
+    color: white; /* White text */
+    position: fixed; /* Fixed position on the left side */
+    left: -250px; /* Initially hidden (off-screen) */
+    top: 0;
+    transition: left 0.3s; /* Smooth transition for the sidebar sliding in/out */
+    padding-top: 20px;
+  }
+  
+  .sidebar h2 {
+    text-align: center;
+    color: #fff;
+  }
+  
+  .sidebar ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .sidebar ul li {
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .sidebar ul li a {
+    text-decoration: none;
+    color: white;
+    display: block;
+  }
+  
+  .sidebar ul li a:hover {
+    background-color: #232323; /* Darker shade on hover */
+  }
+  
+  /* Dropdown menu styling */
+  .submenu {
+    display: none; /* Hide sub-menu by default */
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .submenu li {
+    padding: 10px;
+    background-color: #525252;
+  }
+  
+  .submenu li a {
+    color: #ccc;
+  }
+  
+  .submenu li a:hover {
+    background-color: #222222;
+  }
+  
+  .dropdown.active .submenu {
+    display: block; /* Show sub-menu when dropdown is active */
+  }
+  
+  /* Close button styling */
+  .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 30px;
+    background: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+  }
+  
+
+  
+  /* Button to open sidebar */
+  .open-btn {
+    background-color: rgb(26, 26, 26);
+    color: white;
+    font-size: 25px;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+  }
+  
