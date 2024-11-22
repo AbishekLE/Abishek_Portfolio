@@ -4,21 +4,67 @@
     box-sizing: border-box;
 }
 
+div {
+    position:sticky;
+}
+
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #121212;
+    background-color: #000000;
     color: white;
     overflow: hidden;
     height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: left;
 }
 
 .container {
     text-align: center;
+    justify-content: space-between; 
     opacity: 0;
-    animation: fadeIn 1s forwards;
+    animation: fadeIn 2s forwards;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.containheader {
+    top: 0;
+    display: flex;
+    opacity: 0;
+    z-index: 1000; 
+    animation: fadeIn 2s forwards;
+    justify-content: center; /* Center items vertically */
+    align-items: center; /* Center items horizontally */
+    position:absolute; /* Fixed to the top of the page */
+    top: 0;
+    left: 0;
+    width: 100%; /* Full width of the page */
+    color: white;
+    padding: 10px 20px;
+    background-color: #2a2a2a;
+}
+
+.searchBox {
+    position: relative;
+    top: 0;
+    left: auto;
+    display: flex;
+    text-align: right;
+    opacity: 0;
+    animation: fadeIn 2s forwards;
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    flex: 1; /* Allow items to grow and take equal height */
+    justify-content: right; /* Center items horizontally */
+    width: 100%; /* Make them take the full width */
+    margin-bottom: 10px; /* Space between items */
+
 }
 
 .welcome-message h1 {
@@ -50,7 +96,7 @@ body {
     cursor: pointer;
     text-decoration: none;
     border-radius: 5px;
-    transition: transform 0.3s ease, background-color 0.3s ease;
+    transition: transform 0.2s ease, background-color 0.2s ease;
     opacity: 0;
     animation: fadeIn 1s forwards 1.5s;
 }
@@ -69,3 +115,168 @@ body {
         opacity: 1;
     }
 }
+
+footer{
+    position: absolute; 
+    font-size: 10px;
+    bottom: 0;  
+    width: 100%; 
+    text-align: center;
+    opacity: 0;
+    padding: 1%;
+    animation: fadeIn 1s forwards 2s;
+    color: #ffffff;
+    background-color: #2a2a2a;
+    z-index: 1000;
+}
+
+
+
+/* Sidebar styles */
+.sidebar {
+    font-family: Verdana;
+    height: 100vh; /* Full height */
+    width: 250px; /* Width of the sidebar */
+    background-color: #3e3e3e; /* Dark background */
+    color: white; /* White text */
+    position: fixed; /* Fixed position on the left side */
+    left: -250px; /* Initially hidden (off-screen) */
+    top: 0;
+    transition: left 0.3s; /* Smooth transition for the sidebar sliding in/out */
+    padding-top: 20px;
+    z-index: 1000; 
+  }
+  
+  .sidebar h2 {
+    text-align: center;
+    color: #fff;
+  }
+  
+  .sidebar ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .sidebar ul li {
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .sidebar ul li a {
+    text-decoration: none;
+    color: white;
+    display: block;
+  }
+  
+  .sidebar ul li a:hover {
+    background-color: #232323; /* Darker shade on hover */
+  }
+  
+  /* Dropdown menu styling */
+  .submenu {
+    display: none; /* Hide sub-menu by default */
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .submenu li {
+    padding: 10px;
+    background-color: #525252;
+  }
+  
+  .submenu li a {
+    color: #ccc;
+  }
+  
+  .submenu li a:hover {
+    background-color: #222222;
+  }
+  
+  .dropdown.active .submenu {
+    display: block; /* Show sub-menu when dropdown is active */
+  }
+  
+  /* Close button styling */
+  .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 30px;
+    background: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+  }
+  
+
+  
+  /* Button to open sidebar */
+  .open-btn {
+    background-color: #2a2a2a;
+    color: rgb(255, 255, 255);
+    font-size: 25px;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .formSize{
+    display: flex;
+    justify-content: flex-end;
+    width: 80%; /* The form will take up 80% of its parent container's width */
+    max-width: 600px; /* Maximum width of the form */
+    margin: 0 auto;
+}
+
+
+/* Left item */
+.MoreOption {
+    justify-content: flex-start; /* Align left */
+}
+
+
+/* Combine the .searchBox styles into one block */
+.searchBox {
+    width: auto; /* Use width as needed */
+    padding: 0; /* Remove unnecessary padding */
+    justify-content: flex-end; 
+}
+
+.searchBox input[type="text"] {
+    width: 80%; /* Adjust width for the text input */
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 4px;
+}
+
+.searchBox input[type="submit"] {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #2dba0e;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 10px; /* Space between text input and button */
+}
+
+.searchBox input[type="submit"]:hover {
+    background-color: #348838;
+}
+
+/* Styling for mobile responsiveness */
+@media (max-width: 768px) {
+    .containheader {
+        flex-direction: column; /* Keep items stacked vertically on smaller screens */
+        text-align: center;
+    }
+
+    .MoreOption, .searchBox {
+        flex: 1; /* Allow items to grow and take equal height */
+        justify-content: center; /* Center items horizontally */
+        width: 100%; /* Make them take the full width */
+        margin-bottom: 10px; /* Space between items */
+    }
+}
+
