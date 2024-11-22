@@ -7,24 +7,65 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Abishek Elumalai's Portfolio</title>
+    <title>Portfolio Home</title>
  
-    <link rel="stylesheet" href="https://abishekle.github.io/Abishek_Portfolio/Css/Global.css">
-
-    <script src="https://abishekle.github.io/Abishek_Portfolio/javaScript/Global.js"></script>
-    
+   <link rel="stylesheet" href="https://abishekle.github.io/Abishek_Portfolio/Css/Global.css">
 </head>
+
+<header  class="containheader">
+    <div class="MoreOption">
+        <button class="open-btn" id="open-btn" >☰ More</button>
+    </div>
+    <div class="searchBox">
+        <form  action="https://www.google.com/search" method="get"  class="formSize">
+                <input type="text" name="q" placeholder="Seach Engine" required />
+                <input type="submit" value="Search" itemid="q"/>
+        </form>
+    </div>
+</header>
 
 <body>
         <div class="container">
             <div class="welcome-message">
                 <h1>Welcome to My Portfolio</h1>
-                <p>I'm Abishek Elumalai, a passionate Backend Developer.</p>
+                <p>I'm Abishek Elumalai, a professional Backend Developer.</p>
                 <div class="cta-buttons">
                  <a href="https://abishekle.github.io/Abishek_Portfolio/ContentPages/Portfolio.html" class="btn">Launch Portfolio</a>
                     <a href="#projects" class="btn">My Projects</a>
                 </div>
             </div>
         </div>
+
+              <!-- Sidebar -->
+  <div class="sidebar" id="sidebar">
+    <button class="close-btn" id="close-btn" onclick="javascript:;">&times;</button>
+    <h2>Menu</h2>
+    <ul>
+      <li><a href="\CODE\VsCode\Portfolio\MainBranch\welcomePage.html" target="_parent">Home</a></li>
+      <li class="dropdown"><a href="javascript:void(0)" class="dropbtn">Services</a>
+        <ul class="submenu">
+          <li><a href="#web">Coming Soon...</a></li>
+        </ul>
+      </li>
+      <li class="dropdown"><a href="javascript:void(0)" class="dropbtn">Contact</a>
+        <ul class="submenu">
+          <li><a href="#web">Call</a></li>
+          <li><a href="#web">Email</a></li>
+          <li><a href="#web">Chat</a></li>
+        </ul>
+      </li>
+      
+    </ul>
+  </div>
+
+<script src="https://abishekle.github.io/Abishek_Portfolio/javaScript/Global.js"></script>
 </body>
+
+<footer>
+    <div>
+        <p>&copy; 2024 Abishek Elumalai. All rights reserved.</p>
+    </div>
+</footer>  
+
+
 </html>
